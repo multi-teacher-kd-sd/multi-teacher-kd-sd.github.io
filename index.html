@@ -36,80 +36,40 @@ With the growth of advanced speech synthesis systems, detecting audio deepfakes 
 </div>
 
 <div class="container pt-5 mt-5 shadow p-5 mb-5 bg-white rounded">
-    <h2 style="text-align: center;">Deepfake detection</h2>
-        <div class="table-responsive pt-3" tabindex="0">
-            (P) denotes results from paper. (R) denotes reproduce.
-            <table class="table table-hover pt-2">
-                <thead>
-                  <tr>
-                    <th style="text-align: center">-</th>
-                    <th style="text-align: center">ASVSpoof19</th>
-                    <th style="text-align: center">ASVSpoof21(LA)</th>
-                    <th style="text-align: center">ASVSpoof21(DF)</th>
-                    <th style="text-align: center">ITW</th>
-                    <th style="text-align: center">Eval2024</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td style="text-align: center;">T1 WavLM (L)</td>
-                    <td style="text-align: center;">0.12/0.003</td>
-                    <td style="text-align: center;">3.27/0.275</td>
-                    <td style="text-align: center;">4.86</td>
-                    <td style="text-align: center;">17.43</td>
-                    <td style="text-align: center;">12.33/0.3548</td>
-                  </tr>
-                  <tr>
-                    <td style="text-align: center;">T2 HuBERT (L)</td>
-                    <td style="text-align: center;">0.35/0.010</td>
-                    <td style="text-align: center;">2.50/0.253</td>
-                    <td style="text-align: center;">8.02</td>
-                    <td style="text-align: center;">18.99</td>
-                    <td style="text-align: center;">17.39/0.4989</td>
-                  </tr>
-                  <tr>
-                    <td style="text-align: center;">T3 Wav2Vec2 XLS-R</td>
-                    <td style="text-align: center;">0.14/0.004</td>
-                    <td style="text-align: center;">5.77/0.345</td>
-                    <td style="text-align: center;">5.48</td>
-                    <td style="text-align: center;">15.42</td>
-                    <td style="text-align: center;">11.30/0.327</td>
-                  </tr>
-                  <tr>
-                    <td style="text-align: center;">S1 WavLM (B)</td>
-                    <td style="text-align: center;">0.47/0.022</td>
-                    <td style="text-align: center;">7.55/0.398</td>
-                    <td style="text-align: center;">11.79</td>
-                    <td style="text-align: center;">16.08</td>
-                    <td style="text-align: center;">20.52/0.5754</td>
-                  </tr>
-                  <tr>
-                    <td style="text-align: center;">S2 UniSpeech-SAT (B)</td>
-                    <td style="text-align: center;">0.35/0.011</td>
-                    <td style="text-align: center;">5.98/0.337</td>
-                    <td style="text-align: center;">9.73</td>
-                    <td style="text-align: center;">16.44</td>
-                    <td style="text-align: center;">20.77/0.5862</td>
-                  </tr>
-                  <tr>
-                    <td style="text-align: center;">S3 UniSpeech-SAT (B+)</td>
-                    <td style="text-align: center;">0.25/0.008</td>
-                    <td style="text-align: center;">3.24/0.269</td>
-                    <td style="text-align: center;">8.56</td>
-                    <td style="text-align: center;">15.05</td>
-                    <td style="text-align: center;">18.28/0.5212</td>
-                  </tr>
-                  <tr>
-                    <td style="text-align: center; font-weight: bold;">Proposed multi-teacher KD</td>
-                    <td style="text-align: center;">0.25/0.007</td>
-                    <td style="text-align: center;">3.28/0.274</td>
-                    <td style="text-align: center;">8.06</td>
-                    <td style="text-align: center;">15.92</td>
-                    <td style="text-align: center;">14.98/0.431</td>
-                  </tr>
-                </tbody>
-            </table>
-        </div>
+    <h2 style="text-align: center;">Performance metrics of different KD loss with single teacher models</h2>
+    <p style="text-align: center;">We have chosen the best student model UniSpeech-SAT(B+) as a student model for this experimentation.</p>
+    <div class="table-responsive pt-3" tabindex="0">
+        <table class="table table-hover pt-2">
+            <thead>
+                <tr>
+                    <th style="text-align: center;">Method</th>
+                    <th style="text-align: center;">ASVSpoof19</th>
+                    <th style="text-align: center;">ASVSpoof21(LA)</th>
+                    <th style="text-align: center;">ASVSpoof21(DF)</th>
+                    <th style="text-align: center;">ITW</th>
+                    <th style="text-align: center;">Eval2024</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td style="text-align: center;">T1 WavLM (L)</td><td>0.12/0.003</td><td>3.27/0.275</td><td>4.86</td><td>17.43</td><td>12.33/0.3548</td></tr>
+                <tr><td style="text-align: center;">T2 HuBERT (L)</td><td>0.35/0.010</td><td>2.50/0.253</td><td>8.02</td><td>18.99</td><td>17.39/0.4989</td></tr>
+                <tr><td style="text-align: center;">T3 Wav2Vec2 XLS-R</td><td>0.14/0.004</td><td>5.77/0.345</td><td>5.48</td><td>15.42</td><td>11.30/0.327</td></tr>
+                <tr><td style="text-align: center;">S1 WavLM (B)</td><td>0.47/0.022</td><td>7.55/0.398</td><td>11.79</td><td>16.08</td><td>20.52/0.5754</td></tr>
+                <tr><td style="text-align: center;">S2 UniSpeech-SAT (B)</td><td>0.35/0.011</td><td>5.98/0.337</td><td>9.73</td><td>16.44</td><td>20.77/0.5862</td></tr>
+                <tr><td style="text-align: center;">S3 UniSpeech-SAT (B+)</td><td>0.25/0.008</td><td>3.24/0.269</td><td>8.56</td><td>15.05</td><td>18.28/0.5212</td></tr>
+                <tr><td style="text-align: center;">PKT (XLS-R)</td><td>0.32/0.010</td><td>5.77/0.336</td><td>9.03</td><td>15.60</td><td>18.83</td></tr>
+                <tr><td style="text-align: center;">SP (XLS-R)</td><td>0.29/0.009</td><td>3.14/0.268</td><td>6.56</td><td>15.13</td><td>16.05</td></tr>
+                <tr><td style="text-align: center;">Logit (XLS-R)</td><td>0.33/0.010</td><td>4.46/0.309</td><td>11.66</td><td>13.62</td><td>18.55</td></tr>
+                <tr><td style="text-align: center;">PKT (WavLM)</td><td>0.26/0.008</td><td>3.23/0.270</td><td>9.23</td><td>17.54</td><td>18.22</td></tr>
+                <tr><td style="text-align: center;">SP (WavLM)</td><td>0.28/0.008</td><td>4.18/0.297</td><td>8.65</td><td>15.59</td><td>17.83</td></tr>
+                <tr><td style="text-align: center;">Logit (WavLM)</td><td>0.26/0.008</td><td>3.13/0.268</td><td>9.65</td><td>15.66</td><td>16.94</td></tr>
+                <tr><td style="text-align: center;">PKT (HuBERT)</td><td>0.28/0.008</td><td>4.90/0.318</td><td>9.20</td><td>16.06</td><td>18.27</td></tr>
+                <tr><td style="text-align: center;">SP (HuBERT)</td><td>0.31/0.010</td><td>3.69/0.285</td><td>9.24</td><td>16.75</td><td>17.91</td></tr>
+                <tr><td style="text-align: center;">Logit (HuBERT)</td><td>0.44/0.014</td><td>3.86/0.289</td><td>9.11</td><td>13.57</td><td>16.76</td></tr>
+                <tr><td style="text-align: center; font-weight: bold;">Proposed multi-teacher KD</td><td>0.25/0.007</td><td>3.28/0.274</td><td>8.06</td><td>15.92</td><td>14.98/0.431</td></tr>
+            </tbody>
+        </table>
+    </div>
 </div>
 
 <div class="container pt-5 mt-5 shadow p-5 mb-5 bg-white rounded">
