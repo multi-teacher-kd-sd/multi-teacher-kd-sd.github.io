@@ -36,113 +36,80 @@ With the growth of advanced speech synthesis systems, detecting audio deepfakes 
 </div>
 
 <div class="container pt-5 mt-5 shadow p-5 mb-5 bg-white rounded">
-	<h2 style="text-align: center;">Deepfake detection</h2>
-		<div class="table-responsive pt-3" tabindex="0">
-			(P) denotes results from paper. (R) denotes reproduce.
-			<table class="table table-hover pt-2">
-				<thead>
-				  <tr>
-					<th style="text-align: center">-</th>
-					<th style="text-align: center">Sim-O&uarr;</th>
-					<th style="text-align: center">Sim-R&uarr;</th>
-					<th style="text-align: center">WER&darr;</th>
-					<th style="text-align: center">CMOS&uarr;</th>
-					<th style="text-align: center">SMOS&uarr;</th>
-				  </tr>
-				</thead>
-				<tbody>
-				  <tr style="border-bottom: 2px solid black;">
-					<td style="text-align: center;vertical-align:middle; width: 160px">Ground Truth</td>
-					<td style="text-align: center;vertical-align:middle; width: 160px">0.68</td>
-					<td style="text-align: center;vertical-align:middle; width: 160px">-</td>
-					<td style="text-align: center;vertical-align:middle; width: 160px">1.94</td>
-					<td style="text-align: center;vertical-align:middle; width: 160px">+0.08</td>
-					<td style="text-align: center;vertical-align:middle; width: 160px">3.85</td>
-				  </tr>
-				  <tr>
-					<td style="text-align: center;vertical-align:middle; width: 160px">NaturalSpeech 2</td>
-					<td style="text-align: center;vertical-align:middle; width: 160px">0.55</td>
-					<td style="text-align: center;vertical-align:middle; width: 160px">0.62</td>
-					<td style="text-align: center;vertical-align:middle; width: 160px">1.94</td>
-					<td style="text-align: center;vertical-align:middle; width: 160px">-0.18</td>
-					<td style="text-align: center;vertical-align:middle; width: 160px">3.65</td>
-				  </tr>
-				  <tr>
-					<td style="text-align: center;vertical-align:middle; width: 160px">Voicebox</td>
-					<td style="text-align: center;vertical-align:middle; width: 160px">0.64</td>
-					<td style="text-align: center;vertical-align:middle; width: 160px">0.67</td>
-					<td style="text-align: center;vertical-align:middle; width: 160px">2.03</td>
-					<td style="text-align: center;vertical-align:middle; width: 160px">-0.23</td>
-					<td style="text-align: center;vertical-align:middle; width: 160px">3.69</td>
-				  </tr>
-				  <tr>
-					<td style="text-align: center;vertical-align:middle; width: 160px">Voicebox (R)</td>
-					<td style="text-align: center;vertical-align:middle; width: 160px">0.48</td>
-					<td style="text-align: center;vertical-align:middle; width: 160px">0.50</td>
-					<td style="text-align: center;vertical-align:middle; width: 160px">2.14</td>
-					<td style="text-align: center;vertical-align:middle; width: 160px">-0.32</td>
-					<td style="text-align: center;vertical-align:middle; width: 160px">3.52</td>
-				  </tr>
-				  <tr>
-					<td style="text-align: center;vertical-align:middle; width: 160px">VALL-E (P)</td>
-					<td style="text-align: center;vertical-align:middle; width: 160px">-</td>
-					<td style="text-align: center;vertical-align:middle; width: 160px">0.58</td>
-					<td style="text-align: center;vertical-align:middle; width: 160px">5.90</td>
-					<td style="text-align: center;vertical-align:middle; width: 160px">-</td>
-					<td style="text-align: center;vertical-align:middle; width: 160px">-</td>
-				  </tr>
-				  <tr>
-					<td style="text-align: center;vertical-align:middle; width: 160px">VALL-E (R)</td>
-					<td style="text-align: center;vertical-align:middle; width: 160px">0.47</td>
-					<td style="text-align: center;vertical-align:middle; width: 160px">0.51</td>
-					<td style="text-align: center;vertical-align:middle; width: 160px">6.11</td>
-					<td style="text-align: center;vertical-align:middle; width: 160px">-0.60</td>
-					<td style="text-align: center;vertical-align:middle; width: 160px">3.46</td>
-				  </tr>
-				  <tr>
-					<td style="text-align: center;vertical-align:middle; width: 160px">Mega-TTS 2</td>
-					<td style="text-align: center;vertical-align:middle; width: 160px">0.53</td>
-					<td style="text-align: center;vertical-align:middle; width: 160px">-</td>
-					<td style="text-align: center;vertical-align:middle; width: 160px">2.32</td>
-					<td style="text-align: center;vertical-align:middle; width: 160px">-0.20</td>
-					<td style="text-align: center;vertical-align:middle; width: 160px">3.63</td>
-				  </tr>
-				  <tr>
-					<td style="text-align: center;vertical-align:middle; width: 160px">UniAudio</td>
-					<td style="text-align: center;vertical-align:middle; width: 160px">0.57</td>
-					<td style="text-align: center;vertical-align:middle; width: 160px">0.68</td>
-					<td style="text-align: center;vertical-align:middle; width: 160px">2.49</td>
-					<td style="text-align: center;vertical-align:middle; width: 160px">-0.25</td>
-					<td style="text-align: center;vertical-align:middle; width: 160px">3.71</td>
-				  </tr>
-				  <tr>
-					<td style="text-align: center;vertical-align:middle; width: 160px">StyleTTS 2</td>
-					<td style="text-align: center;vertical-align:middle; width: 160px">0.38</td>
-					<td style="text-align: center;vertical-align:middle; width: 160px">-</td>
-					<td style="text-align: center;vertical-align:middle; width: 160px">2.49</td>
-					<td style="text-align: center;vertical-align:middle; width: 160px">-0.21</td>
-					<td style="text-align: center;vertical-align:middle; width: 160px">3.07</td>
-				  </tr>
-				  <tr>
-					<td style="text-align: center;vertical-align:middle; width: 160px">HierSpeech++</td>
-					<td style="text-align: center;vertical-align:middle; width: 160px">0.51</td>
-					<td style="text-align: center;vertical-align:middle; width: 160px">-</td>
-					<td style="text-align: center;vertical-align:middle; width: 160px">6.33</td>
-					<td style="text-align: center;vertical-align:middle; width: 160px">-0.41</td>
-					<td style="text-align: center;vertical-align:middle; width: 160px">3.50</td>
-				  </tr>
-				  <tr style="border-top: 2px solid black;">
-					<td style="text-align: center;vertical-align:middle; width: 160px">NaturalSpeech 3</td>
-					<td style="text-align: center;vertical-align:middle; width: 160px"><b>0.67</b></td>
-					<td style="text-align: center;vertical-align:middle; width: 160px"><b>0.76</b></td>
-					<td style="text-align: center;vertical-align:middle; width: 160px"><b>1.81</b></td>
-					<td style="text-align: center;vertical-align:middle; width: 160px"><b>0.00</b></td>
-					<td style="text-align: center;vertical-align:middle; width: 160px"><b>4.01</b></td>
-				  </tr>
-				</tbody>
-			  </table>
-		</div>
-		
+    <h2 style="text-align: center;">Deepfake detection</h2>
+        <div class="table-responsive pt-3" tabindex="0">
+            (P) denotes results from paper. (R) denotes reproduce.
+            <table class="table table-hover pt-2">
+                <thead>
+                  <tr>
+                    <th style="text-align: center">-</th>
+                    <th style="text-align: center">ASVSpoof19</th>
+                    <th style="text-align: center">ASVSpoof21(LA)</th>
+                    <th style="text-align: center">ASVSpoof21(DF)</th>
+                    <th style="text-align: center">ITW</th>
+                    <th style="text-align: center">Eval2024</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td style="text-align: center;">T1 WavLM (L)</td>
+                    <td style="text-align: center;">0.12/0.003</td>
+                    <td style="text-align: center;">3.27/0.275</td>
+                    <td style="text-align: center;">4.86</td>
+                    <td style="text-align: center;">17.43</td>
+                    <td style="text-align: center;">12.33/0.3548</td>
+                  </tr>
+                  <tr>
+                    <td style="text-align: center;">T2 HuBERT (L)</td>
+                    <td style="text-align: center;">0.35/0.010</td>
+                    <td style="text-align: center;">2.50/0.253</td>
+                    <td style="text-align: center;">8.02</td>
+                    <td style="text-align: center;">18.99</td>
+                    <td style="text-align: center;">17.39/0.4989</td>
+                  </tr>
+                  <tr>
+                    <td style="text-align: center;">T3 Wav2Vec2 XLS-R</td>
+                    <td style="text-align: center;">0.14/0.004</td>
+                    <td style="text-align: center;">5.77/0.345</td>
+                    <td style="text-align: center;">5.48</td>
+                    <td style="text-align: center;">15.42</td>
+                    <td style="text-align: center;">11.30/0.327</td>
+                  </tr>
+                  <tr>
+                    <td style="text-align: center;">S1 WavLM (B)</td>
+                    <td style="text-align: center;">0.47/0.022</td>
+                    <td style="text-align: center;">7.55/0.398</td>
+                    <td style="text-align: center;">11.79</td>
+                    <td style="text-align: center;">16.08</td>
+                    <td style="text-align: center;">20.52/0.5754</td>
+                  </tr>
+                  <tr>
+                    <td style="text-align: center;">S2 UniSpeech-SAT (B)</td>
+                    <td style="text-align: center;">0.35/0.011</td>
+                    <td style="text-align: center;">5.98/0.337</td>
+                    <td style="text-align: center;">9.73</td>
+                    <td style="text-align: center;">16.44</td>
+                    <td style="text-align: center;">20.77/0.5862</td>
+                  </tr>
+                  <tr>
+                    <td style="text-align: center;">S3 UniSpeech-SAT (B+)</td>
+                    <td style="text-align: center;">0.25/0.008</td>
+                    <td style="text-align: center;">3.24/0.269</td>
+                    <td style="text-align: center;">8.56</td>
+                    <td style="text-align: center;">15.05</td>
+                    <td style="text-align: center;">18.28/0.5212</td>
+                  </tr>
+                  <tr>
+                    <td style="text-align: center; font-weight: bold;">Proposed multi-teacher KD</td>
+                    <td style="text-align: center;">0.25/0.007</td>
+                    <td style="text-align: center;">3.28/0.274</td>
+                    <td style="text-align: center;">8.06</td>
+                    <td style="text-align: center;">15.92</td>
+                    <td style="text-align: center;">14.98/0.431</td>
+                  </tr>
+                </tbody>
+            </table>
+        </div>
 </div>
 
 <div class="container pt-5 mt-5 shadow p-5 mb-5 bg-white rounded">
