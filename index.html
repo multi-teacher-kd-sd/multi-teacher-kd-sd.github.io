@@ -99,6 +99,32 @@ With the growth of advanced speech synthesis systems, detecting audio deepfakes 
     </div>
 </div>
 
+<div class="container pt-5 mt-5 shadow p-5 mb-5 bg-white rounded">
+    <h2 style="text-align: center;">Performance of Different Teacher Models</h2>
+    <p style="text-align: center;">Evaluation of various teacher models across different datasets.</p>
+    <div class="table-responsive pt-3" tabindex="0">
+        <table class="table table-hover pt-2">
+            <thead>
+                <tr>
+                    <th style="text-align: center;">ID</th>
+                    <th style="text-align: center;">Model</th>
+                    <th style="text-align: center;">19LA</th>
+                    <th style="text-align: center;">21LA</th>
+                    <th style="text-align: center;">21DF</th>
+                    <th style="text-align: center;">ITW</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td style="text-align: center;">T1</td><td>WavLM Large</td><td><b>0.12/0.003</b></td><td>3.27/0.275</td><td><b>4.86</b></td><td>17.43</td></tr>
+                <tr><td style="text-align: center;">T2</td><td>HuBERT Large</td><td>0.35/0.010</td><td><b>2.5</b>/0.253</td><td>8.02</td><td>18.99</td></tr>
+                <tr><td style="text-align: center;">T3</td><td>Wav2Vec2 XLS-R 300m</td><td>0.14/0.004</td><td>5.77/0.345</td><td>5.48</td><td>15.42</td></tr>
+                <tr><td style="text-align: center;">T4</td><td>Wav2Vec2 XLS-R 53</td><td>0.20/0.006</td><td>6.06/0.344</td><td>6.14</td><td>24.32</td></tr>
+                <tr><td style="text-align: center;">T5</td><td>Wav2Vec2 Large</td><td>0.39/0.012</td><td>5.25/0.318</td><td>9.42</td><td><b>15.13</b></td></tr>
+                <tr><td style="text-align: center;">T6</td><td>UniSpeech-SAT Large</td><td>0.53/0.017</td><td>6.03/0.353</td><td>5.10</td><td>18.33</td></tr>
+            </tbody>
+        </table>
+    </div>
+</div>
 		
 
 </article>
