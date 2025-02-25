@@ -44,43 +44,6 @@ With the growth of advanced speech synthesis systems, detecting audio deepfakes 
 		The overall architecture.
 	</p>
 </div>
-	
-<div class="container pt-5 mt-5 shadow p-5 mb-5 bg-white rounded">
-    <h2 style="text-align: center;">Performance metrics of different KD loss with single teacher models</h2>
-    <p style="text-align: center;">We have chosen the best student model UniSpeech-SAT(B+) as a student model for this experimentation.</p>
-    <div class="table-responsive pt-3" tabindex="0">
-        <table class="table table-hover pt-2">
-            <thead>
-                <tr>
-                    <th style="text-align: center;">Method</th>
-                    <th style="text-align: center;">19LA</th>
-                    <th style="text-align: center;">21LA</th>
-                    <th style="text-align: center;">21DF</th>
-                    <th style="text-align: center;">ITW</th>
-                    <th style="text-align: center;">24Eval</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr><td style="text-align: center;">T1 WavLM (L) w/o KD</td><td>0.12/0.003</td><td>3.27/0.275</td><td>4.86</td><td>17.43</td><td>12.33/0.3548</td></tr>
-                <tr><td style="text-align: center;">T2 HuBERT (L) w/o KD</td><td>0.35/0.010</td><td>2.50/0.253</td><td>8.02</td><td>18.99</td><td>17.39/0.4989</td></tr>
-                <tr><td style="text-align: center;">T3 Wav2Vec2 XLS-R w/o KD</td><td>0.14/0.004</td><td>5.77/0.345</td><td>5.48</td><td>15.42</td><td>11.30/0.327</td></tr>
-                <tr><td style="text-align: center;">S1 WavLM (B) w/o KD</td><td>0.47/0.022</td><td>7.55/0.398</td><td>11.79</td><td>16.08</td><td>20.52/0.5754</td></tr>
-                <tr><td style="text-align: center;">S2 UniSpeech-SAT w/o KD(B)</td><td>0.35/0.011</td><td>5.98/0.337</td><td>9.73</td><td>16.44</td><td>20.77/0.5862</td></tr>
-                <tr><td style="text-align: center;">S3 UniSpeech-SAT (B+) w/o KD</td><td>0.25/0.008</td><td>3.24/0.269</td><td>8.56</td><td>15.05</td><td>18.28/0.5212</td></tr>
-                <tr><td style="text-align: center;">PKT (T3 with KD) </td><td>0.32/0.010</td><td>5.77/0.336</td><td>9.03</td><td>15.60</td><td>18.83/0.5389</td></tr>
-                <tr><td style="text-align: center;">SP (T3 with KD)</td><td>0.29/0.009</td><td>3.14/0.268</td><td>6.56</td><td>15.13</td><td>16.05/0.4599</td></tr>
-                <tr><td style="text-align: center;">Logit (T3 with KD)</td><td>0.33/0.010</td><td>4.46/0.309</td><td>11.66</td><td>13.62</td><td>18.55/0.5283</td></tr>
-                <tr><td style="text-align: center;">PKT (T1 with KD)</td><td>0.26/0.008</td><td>3.23/0.270</td><td>9.23</td><td>17.54</td><td>18.22/0.5207</td></tr>
-                <tr><td style="text-align: center;">SP (T1 with KD)</td><td>0.28/0.008</td><td>4.18/0.297</td><td>8.65</td><td>15.59</td><td>17.83/0.5115</td></tr>
-                <tr><td style="text-align: center;">Logit (T1 with KD)</td><td>0.26/0.008</td><td>3.13/0.268</td><td>9.65</td><td>15.66</td><td>16.76/0.4832</td></tr>
-                <tr><td style="text-align: center;">PKT (T2 with KD)</td><td>0.28/0.008</td><td>4.90/0.318</td><td>9.20</td><td>16.06</td><td>18.27/0.5232</td></tr>
-                <tr><td style="text-align: center;">SP (T2 with KD)</td><td>0.31/0.010</td><td>3.69/0.285</td><td>9.24</td><td>16.75</td><td>17.91/0.5121</td></tr>
-                <tr><td style="text-align: center;">Logit (T2 with KD)</td><td>0.44/0.014</td><td>3.86/0.289</td><td>9.11</td><td>13.57</td><td>18.56/0.5285</td></tr>
-                <tr><td style="text-align: center; font-weight: bold;">Proposed multi-teacher KD</td><td>0.25/0.007</td><td>3.28/0.274</td><td>8.06</td><td>15.92</td><td>14.98/0.431</td></tr>
-            </tbody>
-        </table>
-    </div>
-</div>
 <div class="container pt-5 mt-5 shadow p-5 mb-5 bg-white rounded">
     <h2 style="text-align: center;">Performance of different student systems across multiple datasets</h2>
     <div class="table-responsive pt-3" tabindex="0">
@@ -168,7 +131,43 @@ With the growth of advanced speech synthesis systems, detecting audio deepfakes 
         </table>
     </div>
 </div>
-
+<div class="container pt-5 mt-5 shadow p-5 mb-5 bg-white rounded">
+    <h2 style="text-align: center;">Performance metrics of different KD loss with single teacher models.</h2>
+    <p style="text-align: center;">We have chosen the best student model UniSpeech-SAT(B+) as a student model for this experimentation. EER (%) and minDCF obtained by different proposed systems across multiple datasets. T denotes to
+teacher models, S denotes to the student models. L denotes Large and B denostes Base variants of the said system</p>
+    <div class="table-responsive pt-3" tabindex="0">
+        <table class="table table-hover pt-2">
+            <thead>
+                <tr>
+                    <th style="text-align: center;">Method</th>
+                    <th style="text-align: center;">19LA</th>
+                    <th style="text-align: center;">21LA</th>
+                    <th style="text-align: center;">21DF</th>
+                    <th style="text-align: center;">ITW</th>
+                    <th style="text-align: center;">24Eval</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td style="text-align: center;">T1 WavLM (L) w/o KD</td><td>0.12/0.003</td><td>3.27/0.275</td><td>4.86</td><td>17.43</td><td>12.33/0.3548</td></tr>
+                <tr><td style="text-align: center;">T2 HuBERT (L) w/o KD</td><td>0.35/0.010</td><td>2.50/0.253</td><td>8.02</td><td>18.99</td><td>17.39/0.4989</td></tr>
+                <tr><td style="text-align: center;">T3 Wav2Vec2 XLS-R w/o KD</td><td>0.14/0.004</td><td>5.77/0.345</td><td>5.48</td><td>15.42</td><td>11.30/0.327</td></tr>
+                <tr><td style="text-align: center;">S1 WavLM (B) w/o KD</td><td>0.47/0.022</td><td>7.55/0.398</td><td>11.79</td><td>16.08</td><td>20.52/0.5754</td></tr>
+                <tr><td style="text-align: center;">S2 UniSpeech-SAT w/o KD(B)</td><td>0.35/0.011</td><td>5.98/0.337</td><td>9.73</td><td>16.44</td><td>20.77/0.5862</td></tr>
+                <tr><td style="text-align: center;">S3 UniSpeech-SAT (B+) w/o KD</td><td>0.25/0.008</td><td>3.24/0.269</td><td>8.56</td><td>15.05</td><td>18.28/0.5212</td></tr>
+                <tr><td style="text-align: center;">PKT (T3 with KD) </td><td>0.32/0.010</td><td>5.77/0.336</td><td>9.03</td><td>15.60</td><td>18.83/0.5389</td></tr>
+                <tr><td style="text-align: center;">SP (T3 with KD)</td><td>0.29/0.009</td><td>3.14/0.268</td><td>6.56</td><td>15.13</td><td>16.05/0.4599</td></tr>
+                <tr><td style="text-align: center;">Logit (T3 with KD)</td><td>0.33/0.010</td><td>4.46/0.309</td><td>11.66</td><td>13.62</td><td>18.55/0.5283</td></tr>
+                <tr><td style="text-align: center;">PKT (T1 with KD)</td><td>0.26/0.008</td><td>3.23/0.270</td><td>9.23</td><td>17.54</td><td>18.22/0.5207</td></tr>
+                <tr><td style="text-align: center;">SP (T1 with KD)</td><td>0.28/0.008</td><td>4.18/0.297</td><td>8.65</td><td>15.59</td><td>17.83/0.5115</td></tr>
+                <tr><td style="text-align: center;">Logit (T1 with KD)</td><td>0.26/0.008</td><td>3.13/0.268</td><td>9.65</td><td>15.66</td><td>16.76/0.4832</td></tr>
+                <tr><td style="text-align: center;">PKT (T2 with KD)</td><td>0.28/0.008</td><td>4.90/0.318</td><td>9.20</td><td>16.06</td><td>18.27/0.5232</td></tr>
+                <tr><td style="text-align: center;">SP (T2 with KD)</td><td>0.31/0.010</td><td>3.69/0.285</td><td>9.24</td><td>16.75</td><td>17.91/0.5121</td></tr>
+                <tr><td style="text-align: center;">Logit (T2 with KD)</td><td>0.44/0.014</td><td>3.86/0.289</td><td>9.11</td><td>13.57</td><td>18.56/0.5285</td></tr>
+                <tr><td style="text-align: center; font-weight: bold;">Proposed multi-teacher KD</td><td>0.25/0.007</td><td>3.28/0.274</td><td>8.06</td><td>15.92</td><td>14.98/0.431</td></tr>
+            </tbody>
+        </table>
+    </div>
+</div>
 <div class="container pt-5 mt-5 shadow p-5 mb-5 bg-white rounded">
 	<div class="text-center">
 		<h1>Pretrained SSL models:</h1>
